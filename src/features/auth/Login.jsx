@@ -3,11 +3,16 @@ import React, { useState } from "react";
 const Login = ({ onSwitch }) => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSwitch("dashboard");
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="bg-white rounded-2xl shadow-xl p-10 w-full max-w-md">
         <h2 className="text-3xl font-extrabold text-center mb-8">Sign in to your account</h2>
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="Email Address"

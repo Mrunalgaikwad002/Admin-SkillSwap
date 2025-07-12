@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Login from "../auth/Login";
 import Register from "../auth/Register";
+import Dashboard from "../dashboard/Dashboard";
 
 const features = [
   {
@@ -31,6 +32,7 @@ const Landing = () => {
 
   if (view === "login") return <Login onSwitch={setView} />;
   if (view === "register") return <Register onSwitch={setView} />;
+  if (view === "dashboard") return <Dashboard />;
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
