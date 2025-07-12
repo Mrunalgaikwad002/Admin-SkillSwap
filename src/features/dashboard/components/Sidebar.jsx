@@ -18,17 +18,24 @@ const navItems = [
   ) },
 ];
 
-const Sidebar = () => (
+const Sidebar = ({ active, onNavigate }) => (
   <aside className="w-64 min-h-screen bg-gray-900 flex flex-col justify-between py-8 px-4 sticky top-0 h-screen">
     <div>
       <div className="text-2xl font-extrabold text-white mb-10 px-2 tracking-wide">SkillSwap Admin</div>
       <nav className="space-y-2">
-        {navItems.map((item, idx) => (
-          <a key={item.name} href="#" className={`flex items-center px-4 py-3 rounded-xl text-base font-medium transition-all duration-150 ${idx === 0 ? 'bg-gray-100 text-gray-900 font-bold' : 'text-gray-200 hover:bg-gray-800 hover:text-white'}`}>
-            {item.icon}
-            {item.name}
-          </a>
-        ))}
+        {navItems.map((item) => {
+          const isActive = active === item.name;
+          return (
+            <button
+              key={item.name}
+              onClick={() => onNavigate(item.name)}
+              className={`w-full flex items-center px-4 py-3 rounded-xl text-base font-medium transition-all duration-150 focus:outline-none ${isActive ? 'bg-gray-800 text-white font-bold' : 'text-gray-200 hover:bg-gray-800 hover:text-white'}`}
+            >
+              {React.cloneElement(item.icon, { className: `w-5 h-5 mr-3 ${isActive ? 'text-white' : 'text-gray-400'}` })}
+              {item.name}
+            </button>
+          );
+        })}
       </nav>
     </div>
     <div className="px-2 mt-10">
