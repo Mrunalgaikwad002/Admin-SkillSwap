@@ -10,6 +10,7 @@ import FeedbackRatingChart from "./components/Charts/FeedbackRatingChart";
 import Users from "../users/Users";
 import Skills from "../skills/Skills";
 import Swaps from "../swaps/Swaps";
+import Reports from "../reports/Reports";
 
 const pageHeadings = {
   Home: "Dashboard",
@@ -39,7 +40,7 @@ const pageComponents = {
   Users: Users,
   Skills: Skills,
   Swaps: Swaps,
-  Reports: () => <div className="p-10">Reports (Coming Soon)</div>,
+  Reports: Reports,
 };
 
 const Dashboard = () => {
