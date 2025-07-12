@@ -8,6 +8,8 @@ import SwapStatusPie from "./components/Charts/SwapStatusPie";
 import MostRequestedSkillsBar from "./components/Charts/MostRequestedSkillsBar";
 import FeedbackRatingChart from "./components/Charts/FeedbackRatingChart";
 import Users from "../users/Users";
+import Skills from "../skills/Skills";
+import Swaps from "../swaps/Swaps";
 
 const pageHeadings = {
   Home: "Dashboard",
@@ -35,8 +37,8 @@ const pageComponents = {
     </>
   ),
   Users: Users,
-  Skills: () => <div className="p-10">Skills (Coming Soon)</div>,
-  Swaps: () => <div className="p-10">Swaps (Coming Soon)</div>,
+  Skills: Skills,
+  Swaps: Swaps,
   Reports: () => <div className="p-10">Reports (Coming Soon)</div>,
 };
 
